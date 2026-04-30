@@ -1,14 +1,11 @@
-# Use Node base image
-FROM node:22
+FROM node:18
 
-# Set working directory
 WORKDIR /app
 
-# Copy files
 COPY . .
 
-# Install dependencies
 RUN npm install || true
 
-# Run app
+EXPOSE 3000
+
 CMD ["node", "app.js"]
